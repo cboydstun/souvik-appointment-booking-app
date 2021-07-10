@@ -16,22 +16,21 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 function App() {
 
   return (
-    <>
-    <Router>
-
-    <Switch>
-      <Route path='/' exact component={Register}/>
-      <Route path='/adminregister' component={AdminRegister}/>
-      <Route path='/login' component={Loginpage}/>
-      <Route path='/AdminLogin' component={AdminLogin}/>
-      <Route path='/dashboard' component={Dashboard}/>
-      <Route path='/admindashboard' component={AdminDashboard}/>
-      <Route path='/newbooking' component={NewBooking}/>
-      <Route path='/mybooking' component={MyBooking}/>
-      <Route path='/allbooking' component={AllBooking}/>
-    </Switch>
-    </Router>
-    </>
+    <div>
+      <Router>
+        <Switch>
+          <Route path='/' exact component={Register}/>
+          <Route path='/adminregister' component={AdminRegister}/>
+          <Route path='/login' component={Loginpage}/>
+          <Route path='/AdminLogin' component={AdminLogin}/>
+          <Route path='/dashboard' component={Dashboard}/>
+          <Route path='/admindashboard' component={AdminDashboard}/>
+          <Route path='/newbooking' component={NewBooking}/>
+          <Route path='/mybooking' component={MyBooking}/>
+          <Route path='/allbooking' component={AllBooking}/>
+        </Switch>
+      </Router>
+    </div>
   );
 }
 

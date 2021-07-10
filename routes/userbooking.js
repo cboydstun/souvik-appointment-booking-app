@@ -1,9 +1,6 @@
 const express = require("express");
 const router = require("express").Router();
 
-
-
-
 let Userbooking = require("../models/userbooking.model");
 
 //get all the user bookings
@@ -26,8 +23,6 @@ router.get('/search/:email',async(req,res)=>{
     res.json({message:err});
   }
 })
-
-
 
 //register bookings
 

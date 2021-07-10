@@ -37,7 +37,7 @@ export default function NewBooking() {
   }
 
   useEffect(() => {
-    axios.get("https://souvik-appointment-bookingapp.herokuapp.com/userbookings/search/"+email).then((res) => {
+    axios.get("http://localhost:5001/userbookings/search/"+email).then((res) => {
       if (res.data == 0) {
         console.log("no data");
       } else {
@@ -70,7 +70,7 @@ export default function NewBooking() {
     // setBooked(booking_data.isBooked);
 
     axios
-      .post("https://souvik-appointment-bookingapp.herokuapp.com/userbookings/add", booking_data)
+      .post("http://localhost:5001/userbookings/add", booking_data)
       .then((res) => {
         alert("booking done");
 
@@ -125,7 +125,7 @@ export default function NewBooking() {
      
 
       {!token && !role ? (
-        (window.location = "/login")
+        (window.location = "http://localhost:5001/login")
       ) 
       : isBooked2 ? (
         <>
@@ -157,7 +157,7 @@ export default function NewBooking() {
                       </span>
 
                       <DatePicker
-                        disabled
+                        
                         onChange={setDate}
                         required
                         value={newdate}
@@ -173,7 +173,7 @@ export default function NewBooking() {
                       <span class="input-group-addon">
                         <i class="fa fa-lock fa" aria-hidden="true"></i>
                       </span>
-                      <TimePicker disabled onChange={setTime} value={newtime} />
+                      <TimePicker onChange={setTime} value={newtime} />
                     </div>
                   </div>
 
@@ -181,7 +181,6 @@ export default function NewBooking() {
 
                   <div class="coolone">
                     <button
-                      disabled
                       className="btn btn-success btn-md"
                       type="submit"
                     >
@@ -190,14 +189,9 @@ export default function NewBooking() {
                   </div>
 
                   <span>
-                    Booking is already done. To make a new booking, delete the
-                    previous one at <Link to="/mybooking">My Bookings Page</Link>
+                   You've already made at least one booking which can be seen at <Link to="/mybooking">My Bookings Page</Link>
                   </span>
                   <br />
-
-                  <p style={{ color: "lightgray" }}>
-                    Made by Souvik Das in 2021
-                  </p>
                 </form>
               </div>
             </div>
@@ -256,10 +250,6 @@ export default function NewBooking() {
                       Book
                     </button>
                   </div>
-
-                  <p style={{ color: "lightgray" }}>
-                    Made by Souvik Das in 2021
-                  </p>
                 </form>
               </div>
             </div>

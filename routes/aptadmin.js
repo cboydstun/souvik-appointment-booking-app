@@ -5,8 +5,6 @@ const jwt = require("jsonwebtoken");
 
 require("dotenv").config();
 
-const JWT_SECRET = 'sdjkfh8923yhjdksbfma@#*(&@*!^#&@bdbskjdjkbfksfuadufguGFUFJAJsdfsdfdfsdf'
-
 let Aptadmin = require("../models/aptadmin.model");
 
 //get the admins
@@ -67,7 +65,7 @@ try{
 				id: admin._id,
 				email: admin.email
 			},
-			JWT_SECRET
+			process.env.JWT_SECRET
 		)
 
 		return res.json({ 

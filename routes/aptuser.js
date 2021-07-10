@@ -3,9 +3,6 @@ const router = require("express").Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
-
-const JWT_SECRET = 'sdjkfh8923yhjdksbfma@#*(&@*!^#&@bdbskjdjkbfksfuadufguGFUFJAJFjabjfFfq'
-
 let Aptuser = require("../models/aptuser.model");
 
 //get the users
@@ -65,7 +62,7 @@ try{
 				id: user._id,
 				email: user.email
 			},
-			JWT_SECRET
+			process.env.JWT_SECRET
 		)
 
 		return res.json({ 

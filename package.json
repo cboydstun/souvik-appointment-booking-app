@@ -2,6 +2,7 @@
   "name": "appointment_booking_app",
   "version": "1.0.0",
   "description": "",
+  "proxy":"http://localhost:5001/",
   "engines": {
     "node": "14.15.5"
   },
@@ -12,7 +13,7 @@
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
     "dev": "concurrently -n 'server,client' -c 'red,green' \"nodemon server.js\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"  
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "author": "",
   "license": "ISC",

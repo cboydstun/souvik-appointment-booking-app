@@ -1,18 +1,10 @@
 import React, { useEffect, useState } from "react";
-// import { Switch, Redirect, BrowserRouter, Route } from "react-router-dom";
-// import Sitefooter from "../Footers/Sitefooter";
 import "./newStyle2.css";
-// import "../bootstrap/dist/css/bootstrap.min.css";
-
-// import "bootstrap/dist/css/bootstrap/min.css";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import {Link,useHistory} from 'react-router-dom';
 
 export default function AdminLogin() {
-
-
- 
 
   useEffect(() => {
     if(localStorage.getItem('token') && localStorage.getItem('role') === 'admin'){
@@ -25,7 +17,7 @@ export default function AdminLogin() {
   })
 
   const authAxios = axios.create({
-    baseURL: "https://souvik-appointment-bookingapp.herokuapp.com",
+    baseURL: "http://localhost:5001/",
   });
 
   let form_data = {};
@@ -40,7 +32,6 @@ export default function AdminLogin() {
   const onSubmit = (data) => {
     let form_data = {
       email: email,
-
       password: password,
     };
 
@@ -48,8 +39,6 @@ export default function AdminLogin() {
 
     authAxios.post("/aptadmins/login", form_data, {}).then((res) => {
       console.log(res.data);
-
-     
 
       if (res.data.status === "ok") {
         // everythign went fine
@@ -81,7 +70,6 @@ export default function AdminLogin() {
           style={{ display: "flex", justifyContent: "center" }}
         >
           <form onSubmit={handleSubmit(onSubmit)} class=" newrow">
-            {/* <h5>First Name</h5> */}
             <h3 class="section-header">Admin Login</h3>
             <br />
             <div class=" indv">
@@ -123,7 +111,6 @@ export default function AdminLogin() {
                 {errors.password && errors.password.message}
               </div>
             </div>
-            {/* <h5>Confirm Password</h5> */}
 
             <br></br>
 
@@ -148,11 +135,9 @@ export default function AdminLogin() {
               <Link to="/login">User Sign In</Link>
             </span>
             <br />
-            <p style={{ color: "lightgray" }}>Made by Souvik Das in 2021</p>
           </form>
         </div>
       </div>
-      {/* <Sitefooter /> */}
     </div>
   );
 }

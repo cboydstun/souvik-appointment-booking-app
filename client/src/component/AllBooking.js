@@ -22,7 +22,7 @@ export default function AllBooking() {
   }
 
   useEffect(() => {
-    axios.get("https://souvik-appointment-bookingapp.herokuapp.com/userbookings/").then((res) => {
+    axios.get("http://localhost:5001/userbookings/").then((res) => {
       if (res.data == 0) {
         console.log("no data");
       } else {
@@ -34,7 +34,7 @@ export default function AllBooking() {
 
   function clickDelete(id) {
     if (window.confirm("are you sure you want to delete the booking?")) {
-      axios.delete("https://souvik-appointment-bookingapp.herokuapp.com/userbookings/" + id).then((res) => {
+      axios.delete("http://localhost:5001/userbookings/" + id).then((res) => {
         // console.log(res.data);
         window.location.reload();
       });
@@ -81,7 +81,7 @@ export default function AllBooking() {
       </nav>
 
       {!token && !role ? (
-        (window.location = "/AdminLogin")
+        (window.location = "http://localhost:5001/AdminLogin")
       ) : (
         <div>
           <img

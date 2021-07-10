@@ -30,7 +30,7 @@ export default function AdminRegister() {
 
 
   const authAxios = axios.create({
-    baseURL: "https://souvik-appointment-bookingapp.herokuapp.com",
+    baseURL: "http://localhost:5001/",
     
   });
 
@@ -169,9 +169,6 @@ export default function AdminRegister() {
           
           <span>Have a admin account? <Link to="/AdminLogin">Sign In</Link></span><br/>
           <span>Go to <Link to="/">User Sign Up</Link></span><br/>
-
-          <p style={{color:'lightgray'}}>Made by Souvik Das in 2021</p>
-
         </form>
         
 
