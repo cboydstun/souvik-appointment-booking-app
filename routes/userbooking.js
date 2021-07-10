@@ -25,7 +25,6 @@ router.get('/search/:email',async(req,res)=>{
 })
 
 //register bookings
-
 router.post("/add", async (req, res) => {
   const newUserbooking = new Userbooking({
     name: req.body.name,
@@ -34,8 +33,6 @@ router.post("/add", async (req, res) => {
     date: req.body.date,
     isBooked: req.body.isBooked
   });
-
- 
 
   try {
     const savedUserbooking = newUserbooking.save();
@@ -48,8 +45,7 @@ router.post("/add", async (req, res) => {
   }
 });
 
-//delet bookings
-
+//delete bookings
 router.delete('/:id',async (req,res)=>{
   try{
     const deleteBooking = await Userbooking.remove({_id:req.params.id});

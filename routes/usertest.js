@@ -1,9 +1,6 @@
 const express = require("express");
 const router = require("express").Router();
 
-
-
-
 let Usertest = require("../models/test.model");
 
 //get the user bookings
@@ -17,15 +14,12 @@ router.get("/", async (req, res) => {
 });
 
 //register bookings
-
 router.post("/add", async (req, res) => {
   const newUsertest = new Usertest({
     name: req.body.name,
     email: req.body.email,
     
   });
-
- 
 
   try {
     const savedUsertest = newUsertest.save();
@@ -38,7 +32,7 @@ router.post("/add", async (req, res) => {
   }
 });
 
-// //delet bookings
+// //delete bookings
 
 // router.delete('/:id',async (req,res)=>{
 //   try{
